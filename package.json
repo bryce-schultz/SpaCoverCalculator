@@ -1,0 +1,15 @@
+{
+  "name": "cover-calculator",
+  "version": "1.0.0",
+  "description": "A spa cover calculator",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "electron ."
+  },
+  "author": "Bryce Schultz",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^19.0.4"
+  }
+}
