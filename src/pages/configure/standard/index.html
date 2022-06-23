@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Cover Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../golbal/css/global.css">
+    <script src="https://kit.fontawesome.com/c15fc21b4b.js" crossorigin="anonymous"></script>
+  </head>
+  <body onload="loadStandardCoverInfo()">
+    <div id="container">
+      <div id="content">
+        <div id="cover-preview">
+          <div id="cover-area">
+            <div id="drawing">
+
+            </div>
+            <div id="cover-info">
+
+            </div>
+          </div>
+        </div>
+        <div class="input-section" id="customer-info-form">
+            <div class="input-category" id="size-info">
+                <div class="labeled-input">
+                  <label>Cover Length</label>
+                  <input type="text" id="length">
+                </div>
+                <div class="labeled-input">
+                  <label>Panel Width</label>
+                  <input type="text" id="width">
+                </div>
+                <div class="labeled-input">
+                  <label>Cut Corner Size</label>
+                  <input type="text" id="corner">
+                </div>
+                <div class="labeled-input">
+                  <label>Size Difference</label>
+                  <input type="text" id="difference">
+                </div>
+            </div>
+            <div class="input-category" id="extra-info">
+                <div class="labeled-input">
+                  <label><i>A</i>irs</label>
+                  <div class="checkbox" id="airs">
+                    <div class="knob">
+                      <div class="line1"></div>
+                      <div class="line2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="labeled-input">
+                  <label>In Ground</label>
+                  <div class="checkbox" id="inground">
+                    <div class="knob">
+                      <div class="line1"></div>
+                      <div class="line2"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="form-buttons">
+              <button class="small-button" onclick="clear_form()">Clear</button>
+              <button class="small-button" onclick="navigate_forward()">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="back">
+        <button onclick="navigate_back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../../golbal/js/shortcuts.js"></script>
+    <script src="../../../golbal/js/cover_types.js"></script>
+    <script src="../../../golbal/js/customer_info.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

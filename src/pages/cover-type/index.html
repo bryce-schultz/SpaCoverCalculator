@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Cover Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../golbal/css/global.css">
+    <script src="https://kit.fontawesome.com/c15fc21b4b.js" crossorigin="anonymous"></script>
+  </head>
+  <body onload="loadCustomerInfo()">
+    <div id="container">
+      <div id="content">
+        <div id="button-container">
+        <button class="medium-selection-button" onclick="navigate_cover('standard')">
+            <i class="fa-solid fa-square"></i>
+            Standard
+          </button>
+          <button class="medium-selection-button" onclick="navigate_cover('plungie')">
+            <i class="fa-solid fa-ticket-simple"></i>
+            Plungie
+          </button>
+          <button class="medium-selection-button unimplemented">
+            <i class="fa-solid fa-circle"></i>
+            Round
+          </button>
+          <button class="medium-selection-button" onclick="navigate_cover('blue-cube')">
+            <i class="fa-solid fa-diamond"></i>
+            Blue Cube
+          </button>
+          <button class="medium-selection-button" onclick="navigate_cover('multi-panel')">
+            <i class="fa-solid fa-square-plus"></i>
+            Multi-Panel
+          </button>
+      </div>
+      <div id="back">
+        <button onclick="navigate_back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+    <script src="../../golbal/js/shortcuts.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
