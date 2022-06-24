@@ -8,6 +8,8 @@ function loadStandardCoverInfo()
 {
     let cover = retrieve('standard-cover-info');
 
+    if (cover == undefined) return;
+
     find('length').value = cover.length;
     find('width').value = cover.width;
     find('corner').value = cover.corner_radius;
@@ -16,6 +18,31 @@ function loadStandardCoverInfo()
         $('#airs').addClass('checked')
     if (cover.inground)
         $('#inground').addClass('checked');
+
+    console.log(cover.fabric_color);
+
+    switch (cover.fabric_color)
+    {
+        case 'Mineral':
+            $('#color-mineral').addClass('color-selected');
+            break;
+        case 'Dove':
+            $('#color-dove').addClass('color-selected');
+            break;
+        case 'Cinnamon':
+            $('#color-cinnamon').addClass('color-selected');
+            break;
+        case 'Mink':
+            $('#color-mink').addClass('color-selected');
+            break;
+        case 'Forest':
+            $('#color-forest').addClass('color-selected');
+         break;
+        default:
+            $('#color-custom').addClass('color-selected');
+            $('#custom-color-input').val(cover.fabric_color);
+        break;
+    }
 }
 
 function clear_form()
@@ -26,6 +53,18 @@ function clear_form()
     find('difference').value = '';
     $('#airs').removeClass('checked')
     $('#inground').removeClass('checked');
+    $('.color-image').removeClass('color-selected');
+    $('#custom-color-input').val('');
+}
+
+function getColor()
+{
+    let color = $('.color-image.color-selected h2').text();
+    if (color == 'Custom')
+    {
+        color = $('#custom-color-input').val();
+    }
+    return color;
 }
 
 function saveStandardCoverInfo()
@@ -36,8 +75,7 @@ function saveStandardCoverInfo()
     let difference = find('difference').value;
     let airs = $('#airs').hasClass('checked');
     let inground = $('#inground').hasClass('checked');
-
-    console.log(airs);
+    let color = getColor();
 
     let cover = new Standard(
         length, 
@@ -45,7 +83,24 @@ function saveStandardCoverInfo()
         corner, 
         difference, 
         airs, 
-        inground);
-    
+        inground,
+        color);
+
     save('standard-cover-info', cover);
 }
+
+function drawDemo()
+{
+    let canvas = new SVGCanvas("100%", "100%");
+    canvas.parent('drawing');
+    canvas.setBackground('transparent');
+
+    canvas.setStroke('#2f3136');
+
+    let width = canvas.getWidth();
+    let height = canvas.getHeight();
+
+    canvas.line(0, 0, width/2, height/2);
+}
+
+drawDemo();

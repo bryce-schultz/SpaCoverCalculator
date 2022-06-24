@@ -531,3 +531,77 @@ html, body
       transform: rotateZ(-45deg);
     }
   }
+
+#color-image-container
+{
+  display: flex;
+}
+
+.color-image
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  width: 15vh;
+  aspect-ratio: 1;
+  color: var(--text-normal);
+  cursor: pointer;
+}
+
+#custom-color-input
+{
+  width: calc(100% - 2vh);
+  height: 2.5vh;
+  font-size: 1.5vh;
+  text-align: center;
+}
+
+.color-image:hover
+{
+  filter: brightness(120%);
+}
+
+.color-selected
+{
+  outline-color: var(--text-muted);
+  outline-width: 2px;
+  outline-style: solid;
+  outline-offset: .4vh;
+}
+
+.color-image h2
+{
+  font-weight: lighter;
+}
+
+#color-mineral
+{
+  background-color: #6B6159;
+}
+
+#color-dove
+{
+  background-color: #7E8180;
+}
+
+#color-cinnamon
+{
+  background-color: #4A2F23;
+}
+
+#color-mink
+{
+  background-color: #765E49;
+}
+
+#color-forest
+{
+  background-color: #102D1D;
+}
+
+#color-custom
+{
+  background-color: #323136;
+}

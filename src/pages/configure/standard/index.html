@@ -23,42 +23,67 @@
         </div>
         <div class="input-section" id="customer-info-form">
             <div class="input-category" id="size-info">
-                <div class="labeled-input">
-                  <label>Cover Length</label>
-                  <input type="text" id="length">
-                </div>
-                <div class="labeled-input">
-                  <label>Panel Width</label>
-                  <input type="text" id="width">
-                </div>
-                <div class="labeled-input">
-                  <label>Cut Corner Size</label>
-                  <input type="text" id="corner">
-                </div>
-                <div class="labeled-input">
-                  <label>Size Difference</label>
-                  <input type="text" id="difference">
-                </div>
+              <div class="labeled-input">
+                <label>Cover Length</label>
+                <input type="text" id="length">
+              </div>
+              <div class="labeled-input">
+                <label>Panel Width</label>
+                <input type="text" id="width">
+              </div>
+              <div class="labeled-input">
+                <label>Cut Corner Size</label>
+                <input type="text" id="corner">
+              </div>
+              <div class="labeled-input">
+                <label>Size Difference</label>
+                <input type="text" id="difference">
+              </div>
             </div>
+
+            <div class="input-category" id="color-info">
+              <div id="color-image-container">
+                <div class="color-image" id="color-mineral">
+                  <h2>Mineral</h2>
+                </div>
+                <div class="color-image" id="color-dove">
+                  <h2>Dove</h2>
+                </div>
+                <div class="color-image" id="color-cinnamon">
+                  <h2>Cinnamon</h2>
+                </div>
+                <div class="color-image" id="color-mink">
+                  <h2>Mink</h2>
+                </div>
+                <div class="color-image" id="color-forest">
+                  <h2>Forest</h2>
+                </div>
+                <div class="color-image" id="color-custom">
+                  <h2>Custom</h2>
+                  <input id="custom-color-input" type="text"></input>
+                </div>
+              </div>
+            </div>
+
             <div class="input-category" id="extra-info">
-                <div class="labeled-input">
-                  <label><i>A</i>irs</label>
-                  <div class="checkbox" id="airs">
-                    <div class="knob">
-                      <div class="line1"></div>
-                      <div class="line2"></div>
-                    </div>
+              <div class="labeled-input">
+                <label><i>A</i>irs</label>
+                <div class="checkbox" id="airs">
+                  <div class="knob">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
                   </div>
                 </div>
-                <div class="labeled-input">
-                  <label>In Ground</label>
-                  <div class="checkbox" id="inground">
-                    <div class="knob">
-                      <div class="line1"></div>
-                      <div class="line2"></div>
-                    </div>
+              </div>
+              <div class="labeled-input">
+                <label>In Ground</label>
+                <div class="checkbox" id="inground">
+                  <div class="knob">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
                   </div>
                 </div>
+              </div>
             </div>
             <div id="form-buttons">
               <button class="small-button" onclick="clear_form()">Clear</button>
@@ -77,6 +102,7 @@
     <script src="../../../golbal/js/shortcuts.js"></script>
     <script src="../../../golbal/js/cover_types.js"></script>
     <script src="../../../golbal/js/customer_info.js"></script>
+    <script src="../../../golbal/js/SVGCanvas.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

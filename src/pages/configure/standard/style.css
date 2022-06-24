@@ -37,7 +37,6 @@
 #drawing
 {
     display: flex;
-    padding: 1vh;
     width: 100%;
     aspect-ratio: 1;
     border-bottom: 1px solid var(--background-secondary);

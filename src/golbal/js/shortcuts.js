@@ -19,14 +19,20 @@ for (let i = 0; i < unimplemented_buttons.length; i++)
     unimplemented_buttons[i].setAttribute('title', 'Unimplemented');
 }
 
-$(".checkbox").on("click", function(){
-    if ($(this).is(".checked")){
-      $(this).removeClass("checked");
+$('.checkbox').on('click', function(){
+    if ($(this).is('.checked')){
+      $(this).removeClass('checked');
       $(this).width();  // required to restart the animations after changing class
-      $(this).addClass("unchecked");
+      $(this).addClass('unchecked');
     }else{
-      $(this).removeClass("unchecked");
+      $(this).removeClass('unchecked');
       $(this).width();  // required to restart the animations after changing class
-      $(this).addClass("checked");    
+      $(this).addClass('checked');    
     }
+});
+
+$('.color-image').on('click', function() {
+    $('.color-image').removeClass('color-selected');
+    $('#custom-color-input').val('');
+    $(this).addClass('color-selected');
 });
