@@ -19,8 +19,6 @@ function loadStandardCoverInfo()
     if (cover.inground)
         $('#inground').addClass('checked');
 
-    console.log(cover.fabric_color);
-
     switch (cover.fabric_color)
     {
         case 'Mineral':
@@ -37,7 +35,9 @@ function loadStandardCoverInfo()
             break;
         case 'Forest':
             $('#color-forest').addClass('color-selected');
-         break;
+            break;
+        case '':
+            break;
         default:
             $('#color-custom').addClass('color-selected');
             $('#custom-color-input').val(cover.fabric_color);
