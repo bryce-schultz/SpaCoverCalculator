@@ -5,5 +5,6 @@ function navigate_back()
 
 function navigate_cover(type)
 {
-    window.location.pathname = '/src/pages/configure/' + type + '/index.html'
+    save('cover-type', type);
+    window.location.pathname = '/src/pages/configure/' + type + '/index.html';
 }

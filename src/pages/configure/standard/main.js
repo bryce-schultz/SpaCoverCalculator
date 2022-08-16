@@ -1,7 +1,7 @@
 function navigate_back()
 {
     saveStandardCoverInfo();
-    window.location.pathname = '/src/pages/cover-type/index.html'
+    window.location.pathname = '/src/pages/cover-type/index.html';
 }
 
 function loadStandardCoverInfo()
@@ -104,3 +104,9 @@ function drawDemo()
 }
 
 drawDemo();
+
+function navigate_forward()
+{
+    saveStandardCoverInfo();
+    window.location.pathname = '/src/pages/packet-info/index.html';
+}

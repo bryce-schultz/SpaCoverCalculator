@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Cover Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../golbal/css/global.css">
+    <script src="https://kit.fontawesome.com/c15fc21b4b.js" crossorigin="anonymous"></script>
+  </head>
+  <body onload="generate_result()">
+    <div id="container">
+      <div id="content">
+        <div id="print-area">
+            <div id="info-area">
+                <div id="cover-info">
+                    <div id="model-info">
+                        <div id="model-name">
+                        </div>
+                        <div id="model-color">
+                        </div>
+                    </div>
+                    <div id="build-info">
+                        
+                    </div>
+                </div>
+                <div id="customer-info">
+                    <div id="customer-heading">
+                        Ordered By
+                    </div>
+                    <div id="customer-address">
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="drawing-area">
+
+            </div>
+            <div id="notes-area">
+                <div id="notes-heading">
+                    Notes:
+                </div>
+                <textarea id="notes-content"></textarea>
+            </div>
+        </div>
+      </div>
+      <div id="back">
+        <button onclick="navigate_back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../golbal/js/packet.js"></script>
+    <script src="../../golbal/js/shortcuts.js"></script>
+    <script src="../../golbal/js/cover_types.js"></script>
+    <script src="../../golbal/js/customer_info.js"></script>
+    <script src="../../golbal/js/SVGCanvas.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

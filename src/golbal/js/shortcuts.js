@@ -1,3 +1,62 @@
+const states = [
+    '',
+    'AL',
+    'AK',
+    'AZ',
+    'AR',
+    'CA',
+    'CZ',
+    'CO',
+    'CT',
+    'DE',
+    'DC',
+    'FL',
+    'GA',
+    'GU',
+    'HI',
+    'ID',
+    'IL',
+    'IN',
+    'IA',
+    'KS',
+    'KY',
+    'LA',
+    'ME',
+    'MD',
+    'MA',
+    'MI',
+    'MN',
+    'MS',
+    'MO',
+    'MT',
+    'NE',
+    'NV',
+    'NH',
+    'NJ',
+    'NM',
+    'NY',
+    'NC',
+    'ND',
+    'OH',
+    'OK',
+    'OR',
+    'PA',
+    'PR',
+    'RI',
+    'SC',
+    'SD',
+    'TN',
+    'TX',
+    'UT',
+    'VT',
+    'VI',
+    'VA',
+    'WA',
+    'WV',
+    'WI',
+    'WY'
+];
+
 function find(id)
 {
     return document.getElementById(id);
@@ -6,6 +65,11 @@ function find(id)
 function save(key, object)
 {
     sessionStorage.setItem(key, JSON.stringify(object));
+}
+
+function create_element(element_name)
+{
+    return document.createElement(element_name);
 }
 
 function retrieve(key)

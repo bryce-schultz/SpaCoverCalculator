@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Cover Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../golbal/css/global.css">
+    <script src="https://kit.fontawesome.com/c15fc21b4b.js" crossorigin="anonymous"></script>
+  </head>
+  <body onload="loadPacketInfo()">
+    <div id="container">
+      <div id="content">
+        <div class="input-section" id="packet-info-form">
+            <div class="input-category" id="items-to-include">
+              <div class="labeled-input">
+                <label>Tighten Tie Downs</label>
+                <input type="number" id="tie-downs" value="0">
+              </div>
+              <div class="labeled-input">
+                <label>Cables</label>
+                <input type="number" id="cables" value="0">
+              </div>
+              <div class="labeled-input">
+                <label>Quicklinks</label>
+                <input type="number" id="quicklinks" value="0">
+              </div>
+              <div class="labeled-input">
+                <label>Other</label>
+                <input type="number" id="other-count" value="0">
+              </div>
+              <div class="labeled-input">
+                <label>Specify</label>
+                <input type="text" id="other-name">
+              </div>
+            </div>
+            <div id="form-buttons">
+              <button class="small-button" onclick="clear_form()">Clear</button>
+              <button class="small-button" onclick="navigate_forward()">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="back">
+        <button onclick="navigate_back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../golbal/js/packet.js"></script>
+    <script src="../../golbal/js/shortcuts.js"></script>
+    <script src="../../golbal/js/cover_types.js"></script>
+    <script src="../../golbal/js/customer_info.js"></script>
+    <script src="../../golbal/js/SVGCanvas.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
