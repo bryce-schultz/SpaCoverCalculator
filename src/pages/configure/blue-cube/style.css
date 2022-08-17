@@ -1,0 +1,50 @@
+#extra-info
+{
+    justify-content: center;
+}
+
+#extra-info .labeled-input
+{
+    flex-grow: 0;
+}
+
+#cover-preview
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    height: 100%;
+}
+
+.input-section
+{
+    justify-content: center;
+    width: 70% !important;
+}
+
+#cover-area
+{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 8vh);
+    aspect-ratio: 0.8;
+
+    border: 1px solid var(--background-secondary);
+    border-radius: .4vh;
+}
+
+#drawing
+{
+    display: flex;
+    width: 100%;
+    aspect-ratio: 1;
+    border-bottom: 1px solid var(--background-secondary);
+}
+
+#cover-info
+{
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}

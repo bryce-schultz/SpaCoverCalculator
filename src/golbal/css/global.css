@@ -1,4 +1,4 @@
-*
+*:not(svg text)
 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -532,12 +532,12 @@ html, body
     }
   }
 
-#color-image-container
+#image-container
 {
   display: flex;
 }
 
-.color-image
+.image
 {
   display: flex;
   flex-direction: column;
@@ -550,7 +550,7 @@ html, body
   cursor: pointer;
 }
 
-#custom-color-input
+#custom-input
 {
   width: calc(100% - 2vh);
   height: 2.5vh;
@@ -558,7 +558,7 @@ html, body
   text-align: center;
 }
 
-.color-image:hover
+.image:hover
 {
   filter: brightness(120%);
 }
@@ -571,9 +571,14 @@ html, body
   outline-offset: .4vh;
 }
 
-.color-image h2
+.image h2
 {
   font-weight: lighter;
+}
+
+.model-selection
+{
+  background-color: var(--background-floating);
 }
 
 #color-mineral

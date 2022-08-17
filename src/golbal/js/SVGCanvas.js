@@ -28,8 +28,8 @@ function SVGCanvas(width, height)
 
     //Setup canvas variables
     this.canvas = document.createElementNS(ns, 'svg');
-    this.canvas.setAttribute('width',  width);
-    this.canvas.setAttribute('height', height);
+    this.canvas.style.width = this.width;
+    this.canvas.style.height = this.height;
     this.canvas.setAttribute('style', "background-color:" + this.background);
     document.body.appendChild(this.canvas);
 
@@ -89,8 +89,8 @@ function SVGCanvas(width, height)
     {
         this.width = width;
         this.height = height;
-        this.canvas.setAttribute('width',  this.width);
-        this.canvas.setAttribute('height', this.height);
+        this.canvas.style.width = this.width;
+        this.canvas.style.height = this.height;
     }
 
     this.setBackground = function(r = undefined, g = undefined, b = undefined)
@@ -280,7 +280,7 @@ function SVGCanvas(width, height)
     this.text = function(t, x, y)
     {
         var text = document.createElementNS(ns, 'text');
-        text.setAttribute('font-size', this.fontSize);
+        text.setAttribute('font-size', this.fontSize + 'px');
         text.setAttribute('fill', this.stroke);
         text.setAttribute('x', x + this.xoffset);
         text.setAttribute('y', y + this.yoffset + this.fontSize * .75);

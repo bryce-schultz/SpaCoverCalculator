@@ -55,7 +55,12 @@ function loadPacketInfo()
     packet.other_count | 0;
 
     document.getElementById("other-name").value =
-    packet.other_name | "";
+    packet.other_name;
+
+    if (packet.other_name == "Other")
+    {
+        document.getElementById("other-name").value = "";
+    }
 }
 
 function clear_form()
