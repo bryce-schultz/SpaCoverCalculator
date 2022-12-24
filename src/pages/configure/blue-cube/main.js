@@ -86,7 +86,7 @@ function saveStandardCoverInfo()
         inground,
         color);
 
-    save('standard-cover-info', cover);
+    save('bluecube-cover-info', cover);
 }
 
 function drawDemo()

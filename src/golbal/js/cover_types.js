@@ -10,7 +10,7 @@ class Standard extends Cover
     size_difference = 0;
     airs = false;
     inground = false;
-    fabric_color = 'mineral';
+    fabric_color = 'Mineral';
 
     constructor(
         length, 
@@ -22,12 +22,12 @@ class Standard extends Cover
         fabric_color)
     {
         super();
-        this.length = length;
-        this.width = width;
-        this.corner_radius = corner_radius;
-        this.size_difference = size_difference;
-        this.airs = airs;
-        this.inground = inground;
+        this.length = length | 0;
+        this.width = width | 0;
+        this.corner_radius = corner_radius | 0;
+        this.size_difference = size_difference | 0;
+        this.airs = airs | false;
+        this.inground = inground | false;
         this.fabric_color = fabric_color;
     }
     
