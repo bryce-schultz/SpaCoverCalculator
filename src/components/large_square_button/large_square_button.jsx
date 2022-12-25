@@ -2,10 +2,7 @@ import './large_square_button.css';
 
 const LargeSquareButton = ({
   children,
-  type,
-  onClick,
-  buttonStyle,
-  buttonSize
+  onClick
 }) =>
 {
   return (

@@ -1,7 +1,7 @@
 {
   "name": "cover-calculator",
   "version": "0.1.0",
-  "main": "main.js",
+  "main": "public/electron.js",
   "private": true,
   "dependencies": {
     "@iconify/icons-bi": "^1.2.13",
@@ -9,6 +9,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "electron-rebuild": "^3.2.9",
+    "path-browserify": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
@@ -21,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently --kill-others \" wait-on http://localhost:3000 && electron . \" \" cross-env BROWSER=none npm start \" "
+    "dev": "concurrently --kill-others \" wait-on http://localhost:3000 && electron . \" \" cross-env BROWSER=none npm start \" ",
+    "rebuild-sqlite3": "electron-rebuild -f -w sqlite3"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +46,7 @@
   },
   "devDependencies": {
     "@iconify/icons-ic": "^1.2.11",
+    "@iconify/icons-mdi": "^1.2.36",
     "@iconify/react": "^4.0.1",
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",

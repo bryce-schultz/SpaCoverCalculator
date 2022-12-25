@@ -153,14 +153,14 @@ function find(id)
     return document.getElementById(id);
 }
 
-function save(key, object)
-{
-    sessionStorage.setItem(key, JSON.stringify(object));
-}
-
 function create_element(element_name)
 {
     return document.createElement(element_name);
+}
+
+function save(key, object)
+{
+    sessionStorage.setItem(key, JSON.stringify(object));
 }
 
 function retrieve(key)
