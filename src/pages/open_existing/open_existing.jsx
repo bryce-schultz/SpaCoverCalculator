@@ -12,12 +12,26 @@ export default function OpenExisting()
 
   const searchDatabase = async (query) =>
   {
-    const customers = await getCustomers(query);
-    console.log(customers);
+    let customers = await getCustomers(query);
+    
+    customers.sort((first, second) => 
+    {
+      if (first.first_name > second.first_name) 
+      {
+         return 1;
+      }
+      else if (first.first_name < second.first_name) 
+      {
+         return -1;
+      }
+
+      return 0;
+    });
 
     let items = customers.map((item) => 
       <SearchResult 
-        key={ item.id } 
+        key={ item.id }
+        id={ item.id } 
         first_name={ item.first_name } 
         last_name={ item.last_name }
         email={ item.email }
@@ -28,24 +42,23 @@ export default function OpenExisting()
       />
     );
 
-    items.push(items[0]);
+      setListItems(items);
+    };
 
-    setListItems(items);
-  };
+    useEffect(()=>{
+      searchDatabase('');
+    }, []);
 
-  useEffect(()=>{
-    searchDatabase('');
-  }, []);
-
-  return (
-    <div id='page-container'>
-      <Topbar/>
+    return (
+      <div id='page-container'>
+        <Topbar/>
       <div id='page-content'>
-        <div className='flex center-content p80-width p100-height'>
+        <div id='narrow-content'>
           <div id='form-wrapper'>
             <div id='top-form'>
               <SearchBar onSearch={ searchDatabase }/>
             </div>
+            <div id='spacer'></div>
             <div id='form-results'>
               <ul id='result-list'>
                 { list_items }

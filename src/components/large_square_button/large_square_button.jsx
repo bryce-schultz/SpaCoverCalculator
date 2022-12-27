@@ -6,7 +6,7 @@ const LargeSquareButton = ({
 }) =>
 {
   return (
-    <button onClick={ onClick } class="large-selection-button">
+    <button onClick={ onClick } className="large-selection-button">
       { children }
     </button>
   );

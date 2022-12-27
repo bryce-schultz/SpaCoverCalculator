@@ -4,17 +4,34 @@
 
     list-style: none;
     padding: 20px 10px 20px 10px;
-    margin: 10px;
+    margin: 0px 10px 10px 10px;
 
     background-color: var(--background-primary);
 
-    border: 1px solid var(--background-tertiary);
     border-radius: 4px;
 
     color: var(--text-muted);
 }
 
+.list-item:first-child
+{
+    margin: 10px;
+}
+
 .list-content-wrapper
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.cover-section
+{
+    transition: all 2s ease-in-out;
+}
+
+.user-section
 {
     display: flex;
 
