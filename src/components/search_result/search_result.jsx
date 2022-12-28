@@ -10,14 +10,7 @@ import Cover from '../../utilities/data_models/cover';
 
 export default function SearchResult(
 {
-  id,
-  first_name,
-  last_name,
-  email,
-  address,
-  city,
-  state,
-  zipcode
+  customer
 })
 {
   const [list_items, setListItems] = useState([]);
@@ -26,7 +19,7 @@ export default function SearchResult(
 
   const searchDatabase = async () =>
   {
-    let covers = await getCovers(id);
+    let covers = await getCovers(customer.id);
 
     if (covers.length !== 0)
     {
@@ -69,15 +62,15 @@ export default function SearchResult(
           <div className='info-section user-info-section'>
             <div className='icon-info name-section'>
               <Icon icon={userIcon}/>
-              { first_name } { last_name }
+              { customer.first_name } { customer.last_name }
             </div>
             <div className='icon-info email-section'>
               <Icon icon={roundEmail} />
-              { email }
+              { customer.email }
             </div>
           </div>
           <div className='info-section location-info-section'>
-            { address } { city }, { state }. { zipcode }
+            { customer.address } { customer.city }, { customer.state }. { customer.zipcode }
           </div>
           <div className='button-section'>
             { button }

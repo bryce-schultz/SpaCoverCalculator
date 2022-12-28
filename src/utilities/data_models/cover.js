@@ -4,6 +4,7 @@ export default class Cover
     ({
         id,
         customer_id,
+        purchase_date,
         type,
         model,
         length,
@@ -19,6 +20,7 @@ export default class Cover
     {
         this.id = id;
         this.customer_id = customer_id;
+        this.purchase_date = purchase_date;
         this.type = type;
         this.model = model;
         this.length = length;
@@ -34,5 +36,27 @@ export default class Cover
     addCover(cover)
     {
         this.covers.push(cover);
+    }
+}
+
+export function FormattedCoverInfo({cover})
+{
+    if (cover.type === 'standard')
+    {
+        return (
+            <div className='flex-row sizing-info'>
+                <div className='length-wrapper margin-right-10'>
+                   <span>Length: { cover.length }</span>
+                </div>
+
+                <div className='width-wrapper margin-right-10'>
+                   <span>Width: { cover.width }</span>
+                </div>
+
+                <div className='corner-radius-wrapper'>
+                   <span>Cornder Radius: { cover.corner_radius }</span>
+                </div>
+            </div>
+        );
     }
 }

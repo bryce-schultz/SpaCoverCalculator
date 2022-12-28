@@ -1,10 +1,32 @@
+import { Icon } from '@iconify/react';
+import dateRangeRounded from '@iconify/icons-material-symbols/date-range-rounded';
+
+import './cover_result.css';
+import { FormattedCoverInfo } from '../../utilities/data_models/cover';
+
 export default function CoverResult({
-    cover
+  cover
 })
 {
-    return (
-        <div>
-            {cover.id} {cover.type} {cover.width} {cover.length} {cover.color}
+  const openBuildsheet = () =>
+  {
+    alert('This opens the build sheet');
+  }
+
+  return (
+    <div className='cover-info-wrapper'>
+      <div className='padded-cover-info'>
+        <div className='date-wrapper'>
+          <Icon icon={dateRangeRounded} />
+          {cover.purchase_date}
         </div>
-    );
+        <div className='formatted-info-wrapper'>
+          <FormattedCoverInfo cover={cover}/>
+        </div>
+        <div className='button-wrapper'>
+          <button onClick={openBuildsheet} className='green-button'>View Buildsheet</button>
+        </div>
+      </div>
+    </div>
+  );
 }

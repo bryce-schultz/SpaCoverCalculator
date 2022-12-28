@@ -28,7 +28,8 @@
 
 .cover-section
 {
-    transition: all 2s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 .user-section

@@ -230,9 +230,22 @@ code
   display: flex;
 }
 
+.flex-row
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.margin-right-10
+{
+  margin-right: 10px;
+}
+
 .green-button
 {
   display: flex;
+
+  flex-shrink: 0;
 
   cursor: pointer;
 
@@ -257,6 +270,8 @@ code
 .red-button
 {
   display: flex;
+
+  flex-shrink: 0;
 
   cursor: pointer;
 

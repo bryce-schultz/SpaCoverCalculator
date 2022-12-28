@@ -1,14 +1,14 @@
 const electron = require('electron');
 
-const { app } = electron;
-const { BrowserWindow } = electron;
+const { app, BrowserWindow } = electron;
 
 const path = require('path');
 const isDev = require('electron-is-dev');
 
 let mainWindow;
 
-function createWindow() {
+function createWindow() 
+{
     mainWindow = new BrowserWindow(
     { 
         width: 900, 
@@ -34,14 +34,18 @@ function createWindow() {
 
 app.on('ready', createWindow);
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
+app.on('window-all-closed', () => 
+{
+    if (process.platform !== 'darwin') 
+    {
         app.quit();
     }
 });
 
-app.on('activate', () => {
-    if (mainWindow === null) {
+app.on('activate', () => 
+{
+    if (mainWindow === null) 
+    {
         createWindow();
     }
 });
@@ -62,13 +66,16 @@ const database_file = database_path + 'database.db';
 const { ipcMain } = require('electron');
 const sqlite3 = require('sqlite3');
 
-const database = new sqlite3.Database(database_file, (err) => {
+const database = new sqlite3.Database(database_file, (err) => 
+{
     if (err) console.error('Database opening error: ', err);
 });
 
-ipcMain.on('asynchronous-message', (event, arg) => {
+ipcMain.on('asynchronous-message', (event, arg) => 
+{
     const sql = arg;
-    database.all(sql, (err, rows) => {
+    database.all(sql, (err, rows) => 
+    {
         event.reply('asynchronous-reply', (err && err.message) || rows);
     });
 });

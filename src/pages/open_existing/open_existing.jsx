@@ -1,10 +1,11 @@
 import Topbar from "../../components/topbar/topbar";
 import SearchBar from "../../components/search_bar/search_bar";
 import getCustomers from "../../utilities/database/get_customers";
-
-import './open_existing.css';
+import Customer from "../../utilities/data_models/customer";
 import SearchResult from "../../components/search_result/search_result";
 import { useState, useEffect } from "react";
+
+import './open_existing.css';
 
 export default function OpenExisting()
 {
@@ -28,17 +29,10 @@ export default function OpenExisting()
       return 0;
     });
 
-    let items = customers.map((item) => 
+    let items = customers.map((customer) => 
       <SearchResult 
-        key={ item.id }
-        id={ item.id } 
-        first_name={ item.first_name } 
-        last_name={ item.last_name }
-        email={ item.email }
-        address={ item.address }
-        city={ item.city }
-        state={ item.state }
-        zipcode={ item.zipcode } 
+        key={ customer.id }
+        customer={ new Customer({...customer}) }
       />
     );
 

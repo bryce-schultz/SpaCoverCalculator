@@ -5,7 +5,7 @@ import
 
 import sendAsync from '../../utilities/database/renderer';
 
-export default function getCovers(customer_id)
+export default async function getCovers(customer_id)
 {
     const query = 
     'SELECT * FROM ' +
@@ -14,7 +14,7 @@ export default function getCovers(customer_id)
     customer_id +
     ';';
 
-    let covers = 
+    let covers = await
     sendAsync(query)
     .then
     (

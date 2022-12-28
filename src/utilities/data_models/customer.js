@@ -1,5 +1,6 @@
-class Customer
+export default class Customer
 {
+    id;
     first_name;
     last_name;
     email;
@@ -10,8 +11,19 @@ class Customer
 
     covers;
 
-    constructor(first_name, last_name, email, address, city, state, zipcode)
+    constructor(
     {
+        id,
+        first_name, 
+        last_name, 
+        email, 
+        address, 
+        city, 
+        state, 
+        zipcode
+    })
+    {
+        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -20,7 +32,7 @@ class Customer
         this.state = state;
         this.zipcode = zipcode;
 
-        this.covers = new Array();
+        this.covers = [];
     }
 
     addCover(cover)
