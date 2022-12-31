@@ -4,13 +4,20 @@ import { useBack } from '../../utilities/nav';
 
 import './back_arrow_nav.css';
 
-export default function BackArrowNav()
+export default function BackArrowNav(
+{
+  beforeBack
+})
 {
   const back = useBack();
 
   const goBack = () =>
   {
-    console.log('test');
+    if (beforeBack !== undefined)
+    {
+      beforeBack(); 
+    }
+
     back();
   }
 

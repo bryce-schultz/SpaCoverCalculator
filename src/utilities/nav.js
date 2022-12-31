@@ -10,7 +10,6 @@ export function useNav()
     {
         const path = location + '_back';
         save(path, path_location.pathname);
-        console.log(path);
         navigate(location);
     }
 
@@ -26,7 +25,6 @@ export function useBack()
     {
         const path = path_location.pathname + '_back';
         const old_path = retrieve(path);
-        console.log(old_path);
         navigate(old_path);
     }
     

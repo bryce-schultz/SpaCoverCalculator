@@ -1,19 +1,16 @@
 import 
 { 
-    customer_last_name 
+    customer_table
 } from "../../constants/tables";
-import getDatabase from "./get_database";
+
+import { sendAsync } from './renderer';
 
 export default function addCustomer(customer)
 {
-    let db = getDatabase();
-
     insertCustomer(customer, db);
-
-    db.close();
 }
 
-function insertCustomer(customer, db)
+function insertCustomer(customer)
 {
     const query = 
     'INSERT INTO ' + 
@@ -36,10 +33,18 @@ function insertCustomer(customer, db)
     customer.zip +
     '`);';
 
-    db.exec(query);
+    let result = 
+    sendAsync(query)
+    .then
+    (
+        (result) => {return result}
+    );
+
+    console.log(result);
 }
 
-export function getCustomerID(customer, db)
+export function getCustomerID(customer)
 {
-
+    
 }
+

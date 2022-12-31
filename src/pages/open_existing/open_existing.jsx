@@ -46,21 +46,21 @@ export default function OpenExisting()
     return (
       <div id='page-container'>
         <Topbar/>
-      <div id='page-content'>
-        <div id='narrow-content'>
-          <div id='form-wrapper'>
-            <div id='top-form'>
-              <SearchBar onSearch={ searchDatabase }/>
-            </div>
-            <div id='spacer'></div>
-            <div id='form-results'>
-              <ul id='result-list'>
-                { list_items }
-              </ul>
+        <div id='page-content'>
+          <div id='narrow-content'>
+            <div id='form-wrapper'>
+              <div id='top-form'>
+                <SearchBar onSearch={ searchDatabase }/>
+              </div>
+              <div id='spacer'></div>
+              <div id='form-results'>
+                <ul id='result-list'>
+                  { list_items }
+                  </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
 }

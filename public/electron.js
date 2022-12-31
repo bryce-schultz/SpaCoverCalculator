@@ -63,7 +63,44 @@ const app_data_path =
 const database_path = app_data_path + '/cover-calculator/Sqlite/';
 const database_file = database_path + 'database.db';
 
-const { ipcMain } = require('electron');
+const tables = 
+{
+    customers: 
+    {
+        create: 
+            'CREATE TABLE IF NOT EXISTS customers (                         \
+            id          INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,  \
+            first_name  TEXT NOT NULL,                                      \
+            last_name   TEXT,                                               \
+            email       TEXT,                                               \
+            address     TEXT,                                               \
+            city        TEXT,                                               \
+            state       TEXT,                                               \
+            zipcode     TEXT                                                \
+        );'
+    },
+    covers: 
+    {
+        create:
+        'CREATE TABLE IF NOT EXISTS covers (                                                \
+            id              INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,              \
+            customer_id     INTEGER NOT NULL REFERENCES customers (id) ON DELETE CASCADE,   \
+            purchase_date   TEXT,                                                           \
+            type            INTEGER NOT NULL DEFAULT standard,                              \
+            model           TEXT    DEFAULT none,                                           \
+            length          INTEGER,                                                        \
+            width           INTEGER,                                                        \
+            corner_radius   INTEGER,                                                        \
+            radius          INTEGER,                                                        \
+            size_difference INTEGER,                                                        \
+            color           TEXT    DEFAULT mineral,                                        \
+            airs            INTEGER DEFAULT (0),                                            \
+            in_ground       INTEGER DEFAULT (0)                                             \
+        );'
+    }
+}
+
+const { ipcMain, dialog } = require('electron');
 const sqlite3 = require('sqlite3');
 
 const database = new sqlite3.Database(database_file, (err) => 
@@ -74,8 +111,13 @@ const database = new sqlite3.Database(database_file, (err) =>
 ipcMain.on('asynchronous-message', (event, arg) => 
 {
     const sql = arg;
+
     database.all(sql, (err, rows) => 
     {
         event.reply('asynchronous-reply', (err && err.message) || rows);
     });
 });
+
+// Create the tables if they don't exist.
+database.exec(tables.customers.create);
+database.exec(tables.covers.create);

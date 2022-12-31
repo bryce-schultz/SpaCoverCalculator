@@ -1,9 +1,10 @@
-function Settings()
-{
-    return (
-        <>
-        </>
-    );
-}
+import Topbar from "../../components/topbar/topbar";
 
-export default Settings;
+export default function Settings()
+{
+  return (
+    <div id="page-container">
+      <Topbar/>
+    </div>
+  );
+}

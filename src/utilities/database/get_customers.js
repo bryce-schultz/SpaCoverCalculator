@@ -3,7 +3,7 @@ import
     customer_table
 } from "../../constants/tables";
 
-import sendAsync from '../../utilities/database/renderer';
+import sendAsync from './renderer';
 
 export default function getCustomers(name)
 {

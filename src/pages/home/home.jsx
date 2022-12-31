@@ -6,11 +6,6 @@ import AddIcon from '@iconify/icons-material-symbols/add';
 import OpenIcon from '@iconify/icons-ic/baseline-file-open';
 import './home.css';
 
-function next()
-{
-  alert("This will open the new cover configurator");
-}
-
 function Home()
 {
   let nav = useNav();
@@ -18,6 +13,11 @@ function Home()
   const openExisting = () =>
   {
       nav('/open');
+  }
+
+  const next = () =>
+  {
+    nav('/customer');
   }
 
   return (

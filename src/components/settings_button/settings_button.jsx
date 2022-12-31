@@ -1,16 +1,16 @@
 import { Icon } from '@iconify/react';
 import SettingsIcon from '@iconify/icons-bi/gear-fill';
-import { useNavigate } from 'react-router-dom';
+import { useNav } from '../../utilities/nav';
 
 import './settings_button.css';
 
 function SettingsButton()
 {
-    const navigate = useNavigate();
+    const nav = useNav();
 
     const openSettings = () =>
     {
-        navigate('/settings');
+        nav('/settings');
     }
     
     return (

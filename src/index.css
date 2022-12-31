@@ -297,3 +297,128 @@ code
 {
   padding: 10px;
 }
+
+.labeled-input
+{
+    display: flex;
+    flex-direction: column;
+    min-width: 0px;
+    margin: 5px;
+    flex-grow: 2;
+
+    color: var(--text-muted);
+}
+
+.labeled-input label
+{
+    white-space: nowrap;
+    margin: 0px 0px 10px 2px;
+}
+
+.input-section
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    height: 100%;
+
+    font-size: 1em;
+
+    color: var(--text-muted);
+}
+
+#form-buttons
+{
+    display: flex;
+    justify-content: center;
+}
+
+.input-section input
+{
+    padding: 5px;
+    border-radius: 4px;
+
+    border: none;
+    color: var(--text-normal);
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-tertiary);
+}
+
+.input-section select
+{
+    border-radius: 4px;
+
+    height: 100%;
+
+    border: none;
+    color: var(--text-normal);
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-tertiary);
+}
+
+.input-section select:focus
+{
+  outline: none;
+}
+
+.input-category
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    padding: 0px;
+}
+
+.input-section input:focus
+{
+    outline: none;
+}
+
+.small-button
+{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--background-secondary);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.small-button:hover
+{
+    background-color: var(--background-accent);
+}
+
+#form-buttons button
+{
+    margin: 10px;
+}
+
+::-webkit-scrollbar
+{
+    background-color: transparent;
+
+    width: 10px;
+
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track 
+{
+    background: var(--background-primary);
+
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb 
+{
+    border-radius: 10px;
+    background: var(--background-tertiary);
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+    background: var(--background-secondary);
+}

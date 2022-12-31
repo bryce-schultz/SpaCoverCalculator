@@ -1,9 +1,10 @@
-function ConfigureCover()
-{
-    return (
-        <>
-        </>
-    );
-}
+import Topbar from "../../components/topbar/topbar";
 
-export default ConfigureCover;
+export default function ConfigureCover()
+{
+  return (
+    <div id='page-container'>
+      <Topbar/>
+    </div>
+  );
+}

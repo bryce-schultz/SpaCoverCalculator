@@ -49,33 +49,6 @@
     overflow-y: scroll;
 }
 
-#result-list::-webkit-scrollbar
-{
-    background-color: transparent;
-
-    width: 10px;
-
-    border-radius: 4px;
-}
-
-#result-list::-webkit-scrollbar-track 
-{
-    background: var(--background-primary);
-
-    border-radius: 4px;
-}
-
-#result-list::-webkit-scrollbar-thumb 
-{
-    border-radius: 10px;
-    background: var(--background-tertiary);
-}
-
-#result-list::-webkit-scrollbar-thumb:hover 
-{
-    background: var(--background-secondary);
-}
-
 #narrow-content
 {
     display: flex;
