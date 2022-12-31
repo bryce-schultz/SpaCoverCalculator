@@ -102,6 +102,7 @@ const tables =
 
 const { ipcMain, dialog } = require('electron');
 const sqlite3 = require('sqlite3');
+const { DefaultDeserializer } = require('v8');
 
 const database = new sqlite3.Database(database_file, (err) => 
 {
@@ -118,6 +119,30 @@ ipcMain.on('asynchronous-message', (event, arg) =>
     });
 });
 
+const insert_test_user = 
+'INSERT OR REPLACE INTO customers (\
+    zipcode,\
+    state,\
+    city,\
+    address,\
+    email,\
+    last_name,\
+    first_name,\
+    id\
+)\
+VALUES (\
+    97502,\
+    \'OR\',\
+    \'Central Point\',\
+    \'557 Blue Heron Dr.\',\
+    \'bryceschultz@live.com\',\
+    \'Schultz\',\
+    \'Bryce\',\
+    0 \
+);';
+
 // Create the tables if they don't exist.
 database.exec(tables.customers.create);
 database.exec(tables.covers.create);
+
+database.exec(insert_test_user);
